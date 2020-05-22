@@ -23,29 +23,27 @@
             <ion-item>
                 <ion-icon name="person" item-start></ion-icon>
                 <ion-label stacked>Nombres:</ion-label>
-                <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
+                <ion-input formControlName="nombre" type="text" placeholder="Nombre"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-icon name="home" item-start></ion-icon>
                 <ion-label stacked>Direccion:</ion-label>
-                <ion-input formControlName="lastName" type="text" placeholder="Direccion"></ion-input>
+                <ion-input formControlName="direccion" type="text" placeholder="Direccion"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-icon name="happy" item-start></ion-icon>
                 <ion-label stacked>Cantidad de Niños:</ion-label>
-                <ion-input formControlName="email" type="number" placeholder="Cantidad de Niños"></ion-input>
+                <ion-input formControlName="cantidad_ni" type="number" placeholder="Cantidad de Niños"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-icon name="hand" item-start></ion-icon>
                 <ion-label stacked>Encargado:</ion-label>
                 <!-- <ion-input formControlName="encargado" type="text" placeholder="Cantidad de Niños"></ion-input> -->
-                <ion-select formControlName="encargado" placeholder="Encargado">
-                    <ion-option value="nes">NES</ion-option>
-                    <ion-option value="n64">Nintendo64</ion-option>
-                    <ion-option value="ps">PlayStation</ion-option>
-                    <ion-option value="genesis">Sega Genesis</ion-option>
-                    <ion-option value="saturn">Sega Saturn</ion-option>
-                    <ion-option value="snes">SNES</ion-option>
+                <ion-select formControlName="encargado_id" placeholder="Encargado">
+                    <ion-option value="pepe">Pepe</ion-option>
+                    <ion-option value="roberto">Roberto</ion-option>
+                    <ion-option value="jose">jose</ion-option>
+
                 </ion-select>
             </ion-item>
             <!-- <ion-item>
@@ -83,7 +81,7 @@
             </ion-row> -->
         </ion-list>
         <div padding>
-            <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
+            <button ion-button block type="submit" [disabled]="!myForm.valid" (click)=" mostrar_modalNinos()">Siguiente</button>
         </div>
     </form>
 

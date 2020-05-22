@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LugarPage } from '../pages/lugar/lugar';
 import { EncargadoPage } from '../pages/encargado/encargado';
+import { NinosPage } from '../pages/ninos/ninos';
 
 // providers
 import { UsuarioProvider } from '../providers/usuario/usuario';
@@ -24,6 +25,8 @@ import { IonicStorageModule } from '@ionic/storage';
 
 
 
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -32,6 +35,8 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     LugarPage,
     EncargadoPage,
+   
+    NinosPage,
 
   ],
   imports: [
@@ -48,6 +53,8 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     LugarPage,
     EncargadoPage,
+    NinosPage,
+
   ],
   providers: [
     StatusBar,

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 // Formulario
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NiñosPage } from '../niños/niños';
+import { NinosPage } from '../ninos/ninos';
 
 
 
@@ -14,7 +16,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LugarPage {
   myForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private modalCtrl:ModalController) {
     this.myForm = this.createMyForm();
   }
 
@@ -27,10 +29,10 @@ export class LugarPage {
 
   private createMyForm(){
     return this.formBuilder.group({
-      name: ['', Validators.required],
-      lastName: ['', Validators.required],
-      encargado: ['', Validators.required],
-      email: ['', Validators.required],
+      nombre: ['', Validators.required],
+      direccion: ['', Validators.required],
+      cantidad_ni: ['', Validators.required],
+      encargado_id: ['', Validators.required],
       // dateBirth: ['', Validators.required],
       // passwordRetry: this.formBuilder.group({
       //   password: ['', Validators.required],
@@ -40,9 +42,14 @@ export class LugarPage {
     });
   }
 
-
   irAtras(){
     this.navCtrl.pop();
+  }
+
+  mostrar_modalNinos(){
+    
+    this.modalCtrl.create(NinosPage).present();
+
   }
 
 
