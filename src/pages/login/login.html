@@ -1,0 +1,73 @@
+<ion-content padding text-center>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col class="top-30">
+
+                <img src="./assets/imgs/original.png" alt="">
+
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col class="top-20">
+
+                <h3>login</h3>
+
+
+            </ion-col>
+        </ion-row>
+
+
+
+        <ion-row>
+            <ion-col class="top-5">
+
+                <!-- <button ion-button color="google" ion-left block>
+              <ion-icon name="logo-google">
+                Google
+              </ion-icon>
+
+            </button>
+              <button ion-button color="facebook" ion-left block (click)="signInWithFacebook()">
+              <ion-icon name="logo-facebook">
+                Facebook
+              </ion-icon>
+
+            </button> -->
+                <ion-list>
+
+                    <ion-item>
+                        <ion-label fixed>Correo</ion-label>
+                        <ion-input type="email" value="" [(ngModel)]="correo"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label fixed>Contraseña</ion-label>
+                        <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+                    </ion-item>
+
+
+                </ion-list>
+
+
+                <button ion-button block icon-only [disabled]="correo.length < 5 || contrasena.length < 5 " (click)="ingresar()" [navPush]="home">
+                  <ion-icon name="ios-person-outline"> </ion-icon>
+                  Ingresar
+                </button>
+
+            </ion-col>
+
+
+
+        </ion-row>
+
+
+    </ion-grid>
+
+
+
+
+
+</ion-content>

@@ -1,14 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title text-center>
+            Carga de Datos
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+
+
+
+    <ion-buttons start>
+        <button ion-button block outline icon-start (click)="mostrar_modal()">
+          <ion-icon name='briefcase' is-active="false"></ion-icon>
+            Cargar lugar
+        </button>
+
+        <button ion-button block outline icon-start (click)="mostrar_modalEncargados()">
+            <ion-icon name='briefcase' is-active="false"></ion-icon>
+              Nuevo Encargado
+          </button>
+
+        <button ion-button block outline icon-start>
+        <ion-icon name='briefcase' is-active="false"></ion-icon>
+        Diagnosticos
+     </button>
+
+        <button ion-button block outline icon-start>
+      <ion-icon name='briefcase' is-active="false"></ion-icon>
+        Dietas
+     </button>
+
+
+    </ion-buttons>
+
 </ion-content>
