@@ -1,3 +1,37 @@
-page-home {
+/*Estilos Generales*/
+.content{
+	background: #d7eb5a;
+	
+	
+}
 
+ion-title{
+	
+	font-family: 'Courier New', Courier, monospace;
+	text-shadow: black 0.1em 0.1em 0.2em
+	
+}
+
+
+.button {
+	background:#f1f6be;
+	color:black;
+	display:inline-block;
+	font-size:1.25em;
+	margin:5px;
+	padding:10px 0;
+	text-align:center;
+	width:320px;
+	height: 120px;
+	text-decoration:none;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 20px;
+	
+}
+ 
+ 
+/*Efectos, Hover*/
+.button:hover {
+	box-shadow:0px 0px 0px;
+	padding-top:7px;
 }
