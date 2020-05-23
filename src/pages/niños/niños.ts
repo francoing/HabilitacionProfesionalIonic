@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class NiñosPage {
 
   FormNinos: FormGroup;
+  ListaNinos:any=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
 
     this.FormNinos = this.createFormNiños();
@@ -30,6 +31,11 @@ export class NiñosPage {
       edad: ['', Validators.required],
       fechaNac: ['', Validators.required],				
     });
+  }
+
+  agregar_ninos(){
+    this.ListaNinos.push(this.FormNinos);
+
   }
 
   

@@ -16,6 +16,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NinosPage {
   FormNinos: FormGroup;
+  ListaNinos:any=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
     this.FormNinos = this.createFormNinos();
@@ -23,6 +24,8 @@ export class NinosPage {
 
   saveData(){
     console.log(this.FormNinos.value);
+   
+    
   }
 
   private createFormNinos(){
@@ -39,6 +42,18 @@ export class NinosPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NinosPage');
+  }
+
+  agregar_ninos(){
+    this.ListaNinos.push(this.FormNinos);
+    console.log('Se agrego al array');
+
+    this.ListaNinos.forEach(nino => {
+      console.log(nino);
+      
+    });
+    
+
   }
 
 }
