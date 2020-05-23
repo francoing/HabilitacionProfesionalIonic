@@ -1,16 +1,17 @@
 <ion-header>
-    <ion-navbar color="primary">
+    <ion-navbar color="light">
 
         <div class="row">
 
             <ion-buttons position>
-                <button ion-button round (click)=" irAtras()">
-        Atras
+                <button class="atras" ion-button round (click)=" irAtras()">
+                    <ion-icon name="arrow-round-back"></ion-icon>
+                    Atras
       </button>
 
             </ion-buttons>
 
-            <ion-title>Encargado</ion-title>
+            <ion-title><h1>Encargado</h1></ion-title>
         </div>
 
 
@@ -43,7 +44,8 @@
 
         </ion-list>
         <div padding>
-            <button ion-button block type="submit" [disabled]="!FormEncargado.valid">Guardar</button>
+            
+            <button class="guardar" ion-button round outline type="submit" [disabled]="!FormEncargado.valid">Guardar</button>
         </div>
     </form>
 </ion-content>

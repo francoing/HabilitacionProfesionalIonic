@@ -1,16 +1,17 @@
 <ion-header>
-    <ion-navbar color="primary">
+    <ion-navbar color="light">
 
         <div class="row">
 
             <ion-buttons position>
-                <button ion-button round (click)=" irAtras()">
-            Atras
-          </button>
+                <button class="atras" ion-button round (click)=" irAtras()">
+                    <ion-icon name="arrow-round-back"></ion-icon>
+                    Atras
+      </button>
 
             </ion-buttons>
 
-            <ion-title>Lugar de Senso</ion-title>
+            <ion-title><h1>Lugar de Senso</h1></ion-title>
         </div>
 
 
@@ -81,7 +82,7 @@
             </ion-row> -->
         </ion-list>
         <div padding>
-            <button ion-button block type="submit" [disabled]="!myForm.valid" (click)=" mostrar_modalNinos()">Siguiente</button>
+            <button ion-button round outline type="submit" [disabled]="!myForm.valid" (click)=" mostrar_modalNinos()">Siguiente</button>
         </div>
     </form>
 

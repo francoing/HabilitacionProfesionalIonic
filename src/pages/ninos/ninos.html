@@ -1,6 +1,8 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Niños Form</ion-title>
+        
+        <ion-title color="light"><h1>Formulario de Niño</h1></ion-title>
+        
     </ion-navbar>
 </ion-header>
 
@@ -24,19 +26,19 @@
                 <ion-input formControlName="dni" type="text" placeholder="DNI"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-icon name="call" item-start></ion-icon>
+                <ion-icon name="heart" item-start></ion-icon>
                 <ion-label stacked>Peso:</ion-label>
                 <ion-input formControlName="peso" type="text" placeholder="50.6 Kg..."></ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-icon name="call" item-start></ion-icon>
+                <ion-icon name="stats" item-start></ion-icon>
                 <ion-label stacked>Talla:</ion-label>
                 <ion-input formControlName="talla" type="text" placeholder="1.5 Mt..."></ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-icon name="call" item-start></ion-icon>
+                <ion-icon name="clipboard" item-start></ion-icon>
                 <ion-label stacked>Edad:</ion-label>
                 <ion-input formControlName="edad" type="text" placeholder="Edad"></ion-input>
             </ion-item>
@@ -44,13 +46,13 @@
             <ion-item>
                 <ion-icon name="calendar" item-start></ion-icon>
                 <ion-label stacked>Fecha de nacimiento:</ion-label>
-                <ion-datetime formControlName="fechaNac" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
+                <ion-datetime formControlName="fechaNac" displayFormat="DD-MM-YYYY" placeholder="DD-MM-YYYY"></ion-datetime>
             </ion-item>
 
 
         </ion-list>
         <div padding>
-            <button ion-button block type="submit" [disabled]="!FormNinos.valid">Guardar</button>
+            <button class="guardar" ion-button round outline type="submit" [disabled]="!FormNinos.valid">Guardar</button>
         </div>
     </form>
 
