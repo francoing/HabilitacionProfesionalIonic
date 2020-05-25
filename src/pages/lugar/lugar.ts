@@ -16,6 +16,7 @@ import { NinosPage } from '../ninos/ninos';
 export class LugarPage {
   myForm: FormGroup;
 
+  lugar:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private modalCtrl:ModalController) {
     this.myForm = this.createMyForm();
   }
@@ -48,7 +49,12 @@ export class LugarPage {
 
   mostrar_modalNinos(){
     
-    this.modalCtrl.create(NinosPage).present();
+    // this.modalCtrl.create(NinosPage,{lugar:lugar}).present();
+    this.navCtrl.push(NinosPage,{
+      myForm:this.myForm.value.nombre    
+      });
+      console.log(this.myForm.value.nombre);
+      
 
   }
 

@@ -1,7 +1,9 @@
 <ion-header>
-    <ion-navbar color="primary">
+    <ion-navbar color="celeste">
         <ion-title text-center>
-           <h1> Cooperando</h1>
+            Cooperando
+            <ion-icon name='body' is-active="false"></ion-icon>
+
         </ion-title>
     </ion-navbar>
 </ion-header>
@@ -11,24 +13,24 @@
 
 
     <ion-buttons start>
-        <button ion-button block outline icon-start (click)="mostrar_modal()">
-          <ion-icon name='clipboard' is-active="false"></ion-icon>
-            Cargar lugar
+        <button class="bonton-principal" ion-button block outline icon-start (click)="mostrar_modal()">
+          <ion-icon name='add-circle' is-active="false"></ion-icon>
+            <h6>Cargar lugar </h6>
         </button>
 
-        <button ion-button block outline icon-start (click)="mostrar_modalEncargados()">
+        <button class="bonton-principal" ion-button block outline icon-start (click)="mostrar_modalEncargados()">
             <ion-icon name='person' is-active="false"></ion-icon>
-              Nuevo Encargado
+            <h6>  Nuevo Encargado</h6>
           </button>
 
-        <button ion-button block outline icon-start>
+        <button class="bonton-principal" ion-button block outline icon-start>
         <ion-icon name='stats' is-active="false"></ion-icon>
-        Diagnosticos
+        <h6> Diagnosticos</h6>
      </button>
 
-        <button ion-button block outline icon-start>
+        <button class="bonton-principal" ion-button block outline icon-start>
       <ion-icon name='restaurant' is-active="false"></ion-icon>
-        Dietas
+      <h6> Dietas</h6>
      </button>
 
 

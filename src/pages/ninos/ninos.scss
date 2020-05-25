@@ -1,3 +1,31 @@
-page-ninos {
+page-ninos {}
 
+// ion-title{
+// 	font-family:  'Lora', serif;
+// 	text-shadow: black 0.1em 0.1em 0.2em;
+// }
+.guardar:hover {
+    box-shadow: 0px 0px 0px;
+    padding-top: 7px;
+    color: black;
 }
+
+.atras ion-icon {
+    border-radius: 50px !important;
+    width: 20px !important;
+    height: 30px !important;
+    background: var(--ion-color-tertiary) !important;
+    color: var(--ion-color-light) !important;
+    padding: 5px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.atras:hover {
+    box-shadow: 0px 0px 0px;
+    padding-top: 7px;
+    color: white;
+    background: rgb(202, 211, 204);
+}
+
+//////////////////////////////////////////////////////////////
