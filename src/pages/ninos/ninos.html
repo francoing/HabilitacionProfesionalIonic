@@ -1,9 +1,9 @@
 <ion-header>
     <ion-navbar color="celeste">
 
-        <ion-title text-center>
+        <ion-title>
 
-            {{lugar.controls}}
+            {{lugar}}
         </ion-title>
 
     </ion-navbar>
@@ -56,11 +56,14 @@
         </ion-list>
         <div class="row" text-center>
 
-            <button class="guardar" ion-button round block type="submit" [disabled]="!FormNinos.valid" (click)="mostrar_modalNinos()">Cargar mas</button>
+            <button class="guardar" ion-button round block type="submit" [disabled]="!FormNinos.valid" (click)=" mostrar_modalNinos()">Cargar mas</button>
             <button class="guardar" ion-button round block type="submit" [disabled]="!FormNinos.valid">Finalizar</button>
+
+
         </div>
 
     </form>
+    <button class="guardar" ion-button round block (click)="irRoot()">Cancelar</button>
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- <div formArrayName="ninos">
         <h3>Aliases</h3>

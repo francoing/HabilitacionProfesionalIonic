@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators , FormArray} from '@angular/forms';
+import { HomePage } from "../home/home";
+import { TabsPage } from '../tabs/tabs';
+
 
 
 
@@ -13,11 +16,14 @@ export class NinosPage {
   FormNinos: FormGroup;
   ListaNinos:any=[];
   lugar:any;
-  
+  home = HomePage;
+  tab1=TabsPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder, private modalCtrl:ModalController) {
     this.FormNinos = this.createFormNinos();
     this.lugar = navParams.get('myForm');
+    console.log(this.lugar);
+    
   }
 
   saveData(){
@@ -43,6 +49,18 @@ export class NinosPage {
     this.modalCtrl.create(NinosPage).present();
 
   }
+
+  Limpiar_form(){
+
+    this.FormNinos.reset();
+
+  }
+  irRoot(){
+    this.navCtrl.push(this.tab1);
+
+  }
+
+  
 
   // private createFormNinos(){
   //   return this.formBuilder.group({
