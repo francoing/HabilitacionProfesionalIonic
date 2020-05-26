@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LugarPage } from '../pages/lugar/lugar';
 import { EncargadoPage } from '../pages/encargado/encargado';
 import { NinosPage } from '../pages/ninos/ninos';
+import { UbicacionPage } from '../pages/ubicacion/ubicacion';
 
 // providers
 import { UsuarioProvider } from '../providers/usuario/usuario';
@@ -35,9 +36,8 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     LugarPage,
     EncargadoPage,
-   
     NinosPage,
-
+    UbicacionPage,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +54,7 @@ import { IonicStorageModule } from '@ionic/storage';
     LugarPage,
     EncargadoPage,
     NinosPage,
+    UbicacionPage,
 
   ],
   providers: [
