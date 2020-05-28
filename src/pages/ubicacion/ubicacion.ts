@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import leaflet from 'leaflet';
  
@@ -6,16 +6,18 @@ import leaflet from 'leaflet';
   selector: 'ubicacion-home',
   templateUrl: 'ubicacion.html'
 })
-export class UbicacionPage {
+export class UbicacionPage implements OnInit {
   @ViewChild('map') mapContainer: ElementRef;
   map: any;
   constructor(public navCtrl: NavController) {
  
   }
- 
-  ionViewDidEnter() {
-    this.loadmap();
+
+  ngOnInit(){
+    this.loadmap()
   }
+ 
+ 
  
   loadmap() {
     this.map = leaflet.map("map").fitWorld();
