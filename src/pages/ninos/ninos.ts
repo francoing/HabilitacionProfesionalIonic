@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angul
 import { FormBuilder, FormGroup, Validators , FormArray} from '@angular/forms';
 import { HomePage } from "../home/home";
 import { TabsPage } from '../tabs/tabs';
+import { ResultadosPage } from '../resultados/resultados';
 
 
 
@@ -47,6 +48,17 @@ export class NinosPage {
   mostrar_modalNinos(){
     
     this.modalCtrl.create(NinosPage).present();
+
+  }
+
+  Evaluar(){
+    
+    // this.modalCtrl.create(NinosPage,{lugar:lugar}).present();
+    this.navCtrl.push(ResultadosPage,{
+      FormNinos:this.FormNinos.value    
+      });
+      console.log(this.FormNinos.value);
+      
 
   }
 

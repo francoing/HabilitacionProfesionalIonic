@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-navbar color="celeste">
+        <ion-title>Resultados Niño:{{ValImc.nombre}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+    <ion-card>
+        <ion-card-header>
+            IMC: {{ CalcularImc() }}
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                <ion-icon margin="5px" name="md-send"></ion-icon>Situacion:{{informarImc(imc)}}</p>
+            <br>
+            <!-- <p><ion-icon margin="5px" name="md-thumbs-up"></ion-icon>IMC saudável fica entre 18,5 a 25.</p>
+            <p><ion-icon margin="5px" name="md-help"></ion-icon>Não entendeu? Visualize a página "Sobre".</p> -->
+        </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-card>
+        <ion-card-header>
+            Grafico Dona
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+      </canvas>
+        </ion-card-content>
+    </ion-card> -->
+
+    <!-- <ion-card>
+        <ion-card-header>
+            Grafico Linea
+        </ion-card-header>
+        <ion-card-content>
+            <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
+            </canvas>
+        </ion-card-content>
+    </ion-card> -->
+
+    <div class="flex">
+        <div class="flex-item">
+            <div style="display: block;">
+                <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <button class="guardar" ion-button round block (click)=" mostrar_modalNinos()">Cargar mas</button>
+    <button class="guardar" ion-button round block (click)="irRoot()">Finalizar</button>
+
+
+
+</ion-content>

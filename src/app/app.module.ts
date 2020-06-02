@@ -13,6 +13,7 @@ import { LugarPage } from '../pages/lugar/lugar';
 import { EncargadoPage } from '../pages/encargado/encargado';
 import { NinosPage } from '../pages/ninos/ninos';
 import { UbicacionPage } from '../pages/ubicacion/ubicacion';
+import { ResultadosPage } from '../pages/resultados/resultados';
 
 // providers
 import { UsuarioProvider } from '../providers/usuario/usuario';
@@ -21,6 +22,11 @@ import { DatosProvider } from '../providers/datos/datos';
 import { HttpClientModule } from '@angular/common/http';
 //almacenamiento
 import { IonicStorageModule } from '@ionic/storage';
+
+// Graficos
+// import { ChartsModule } from 'ng2-charts';
+import  {  ChartsModule  }  from  'ng2-charts-x' ;
+
 
 
 
@@ -38,12 +44,14 @@ import { IonicStorageModule } from '@ionic/storage';
     EncargadoPage,
     NinosPage,
     UbicacionPage,
+    ResultadosPage,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,6 +63,7 @@ import { IonicStorageModule } from '@ionic/storage';
     EncargadoPage,
     NinosPage,
     UbicacionPage,
+    ResultadosPage,
 
   ],
   providers: [
