@@ -3,9 +3,19 @@
     <ion-title>
         Ubicacion de Merenderos
     </ion-title>
-  </ion-navbar>
+
+      <ion-buttons end>
+        <button ion-button icon-only (click)="addMarker()">
+            <ion-icon name="md-locate"></ion-icon>
+          </button>
+      </ion-buttons>  
+      </ion-navbar>
 </ion-header>
 
 <ion-content>
   <div id="map" style="width:100%; height:100%;"></div>
+  <div class="content-search">
+    
+    <ion-searchbar placeholder="Buscar Comedor"></ion-searchbar>
+  </div>
 </ion-content>
