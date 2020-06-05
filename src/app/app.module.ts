@@ -14,6 +14,7 @@ import { EncargadoPage } from '../pages/encargado/encargado';
 import { NinosPage } from '../pages/ninos/ninos';
 import { UbicacionPage } from '../pages/ubicacion/ubicacion';
 import { ResultadosPage } from '../pages/resultados/resultados';
+import { BusquedaPage } from '../pages/busqueda/busqueda';
 
 // providers
 import { UsuarioProvider } from '../providers/usuario/usuario';
@@ -26,6 +27,13 @@ import { IonicStorageModule } from '@ionic/storage';
 // Graficos
 // import { ChartsModule } from 'ng2-charts';
 import  {  ChartsModule  }  from  'ng2-charts-x' ;
+
+
+
+
+
+import 'chartjs-plugin-zoom';
+
 
 
 
@@ -45,13 +53,15 @@ import  {  ChartsModule  }  from  'ng2-charts-x' ;
     NinosPage,
     UbicacionPage,
     ResultadosPage,
+    BusquedaPage,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
-    ChartsModule
+    ChartsModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,6 +74,7 @@ import  {  ChartsModule  }  from  'ng2-charts-x' ;
     NinosPage,
     UbicacionPage,
     ResultadosPage,
+    BusquedaPage
 
   ],
   providers: [

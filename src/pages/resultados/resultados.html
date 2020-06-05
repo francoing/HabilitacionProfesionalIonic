@@ -49,6 +49,46 @@
         </div>
     </div>
 
+    <!-- <ion-item>
+        <ion-input type="text" [(ngModel)]="stock" placeholder="AAPL, MSFT..."></ion-input>
+        <button ion-button block slot="end" expand="full" (click)="getData()" [disabled]="stock == ''">
+          <ion-icon slot="start" name="search"></ion-icon>
+          Search
+        </button>
+    </ion-item> -->
+
+    <!-- <div class="flex">
+        <div class="flex-item">
+            <div style="display: block;">
+                <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [colors]="chartColors" [legend]="showLegend" [chartType]="chartType">
+                </canvas>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <!-- <ion-card>
+        <ion-card-header>
+            <ion-card-title>Settings</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-label>Line chart?</ion-label>
+                <ion-toggle (ionChange)="typeChanged($event)" checked></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Show legend?</ion-label>
+                <ion-toggle [(ngModel)]="showLegend"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Background color</ion-label>
+                <ion-input type="text" [(ngModel)]="chartColors[0].backgroundColor"></ion-input>
+            </ion-item>
+        </ion-card-content>
+    </ion-card> -->
+
+
 
 
 
