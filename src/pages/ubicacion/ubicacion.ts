@@ -14,6 +14,7 @@ export class UbicacionPage implements OnInit {
     {
       latitude:-26.834722,
       longitude:-65.2527723,
+      
     },
     {
       latitude: -26.8345033,
