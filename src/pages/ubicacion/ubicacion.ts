@@ -85,10 +85,10 @@ export class UbicacionPage implements OnInit {
     
     this.map.addLayer(marker);
     
-
     
     
   }
+  
   
 }
 
