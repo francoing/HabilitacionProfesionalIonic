@@ -32,7 +32,7 @@ import  {  ChartsModule  }  from  'ng2-charts-x' ;
 
 
 
-import 'chartjs-plugin-zoom';
+
 
 
 
