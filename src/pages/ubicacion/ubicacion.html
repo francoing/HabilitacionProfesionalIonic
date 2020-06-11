@@ -14,8 +14,10 @@
 
 <ion-content>
   <div id="map" style="width:100%; height:100%;"></div>
-  <div class="content-search">
-    
-    <ion-searchbar placeholder="Buscar Comedor"></ion-searchbar>
-  </div>
+  <ion-item class="seleccionComedor">
+    <ion-label>Selecione un Comedor</ion-label>
+    <ion-select #mySelect value="brown" ok-text="Okay" cancel-text="Dismiss" (ionChange)="selectAll(mySelect)">
+      <ion-option *ngFor="let key of comedoresKey" value={{key}}>{{key}}</ion-option>
+    </ion-select>
+  </ion-item>
 </ion-content>

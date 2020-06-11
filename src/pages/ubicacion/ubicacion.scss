@@ -1,12 +1,17 @@
 page-ubicacion {
  content: center;
 }
-.content-search{
+.seleccionComedor{
     width: 80%;
     top:0;
     position: fixed;
     z-index: 1000;
     margin: 5px;
     margin-left: 50px;
+}
+.leaflet-routing-container.leaflet-bar.leaflet-control{
+    
+    margin-top:15%;
+    background: white;
 }
 
