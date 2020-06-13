@@ -15,6 +15,8 @@ import { NinosPage } from '../pages/ninos/ninos';
 import { UbicacionPage } from '../pages/ubicacion/ubicacion';
 import { ResultadosPage } from '../pages/resultados/resultados';
 import { BusquedaPage } from '../pages/busqueda/busqueda';
+import { DiagnosticosPage } from '../pages/diagnosticos/diagnosticos';
+import { DietasPage } from '../pages/dietas/dietas';
 
 // providers
 import { UsuarioProvider } from '../providers/usuario/usuario';
@@ -54,6 +56,8 @@ import 'chartjs-plugin-zoom';
     UbicacionPage,
     ResultadosPage,
     BusquedaPage,
+    DiagnosticosPage,
+    DietasPage
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,9 @@ import 'chartjs-plugin-zoom';
     NinosPage,
     UbicacionPage,
     ResultadosPage,
-    BusquedaPage
+    BusquedaPage,
+    DietasPage,
+    DiagnosticosPage,
 
   ],
   providers: [

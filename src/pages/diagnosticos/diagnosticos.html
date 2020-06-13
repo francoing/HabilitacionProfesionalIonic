@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar text-center color="celeste">
+        <ion-title>Diagnosticos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                <ion-icon name="md-send"></ion-icon>Situacion:</p>
+            <br>
+            <p>
+                <ion-icon name="md-thumbs-up"></ion-icon>Total de merenderos y comedores censados:100</p>
+            <br>
+            <p>
+                <ion-icon name="md-help"></ion-icon>Total de niños y/o adolecentes censados:500</p>
+        </ion-card-content>
+    </ion-card>
+
+    <div style="display: block">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType">
+    </canvas>
+    </div>
+
+</ion-content>
