@@ -1,42 +1,43 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
-import leaflet from 'leaflet';
- 
+import { NavController, AlertController, Select  } from 'ionic-angular';
+import * as Leaflet from 'leaflet';
+import 'leaflet-routing-machine';
+//import 'leaflet-easybutton';
+declare var L: any;
+//declare var Leaflet: any;
+
 @Component({
   selector: 'ubicacion-home',
-  templateUrl: 'ubicacion.html'
+  templateUrl: 'ubicacion.html',
+  
 })
 export class UbicacionPage implements OnInit {
   @ViewChild('map') mapContainer: ElementRef;
+  @ViewChild('myselect') mySelect: Select;
   map: any;
   ubicationUser:any=[];
-  comedores:any = [
-    {
-      latitude:-26.834722,
-      longitude:-65.2527723,
-    },
-    {
-      latitude: -26.8345033,
-      longitude:-65.2531322,
-    } 
-    ,
-    {
-      latitude: -26.8340317,
-      longitude:-65.2585252,
-    } 
-
-  ]
+  routingControl = null;
+  
+  
+  comedores:any = {
+    "comedor1": {latitude:-26.834722,longitude:-65.2527723},
+    "comedor2":  {latitude:-26.8340416,longitude:-65.2567466},
+    "comedor3":  {latitude:-26.8340317,longitude:-65.2585252}, 
+    "rodrigo": {latitude:-34.5674263,longitude:-58.4858402}, 
+  }
+  comedoresKey:any;
   constructor(public navCtrl: NavController, public alrtCtrl: AlertController) {
     
   }
-
+  
   ngOnInit(){
-    this.loadmap()
+    this.loadmap();
+    this.comedoresKey = Object.keys(this.comedores);
   }
  
    loadmap() {
-    this.map = leaflet.map("map").fitWorld();
-    leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    this.map = Leaflet.map("map").fitWorld();
+    Leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attributions: 'www.tphangout.com',
       maxZoom: 18
     }).addTo(this.map);
@@ -44,30 +45,77 @@ export class UbicacionPage implements OnInit {
     setView: true,
     maxZoom: 16,
   }).on('locationfound', (e) => {
-    let markerGroup  = leaflet.featureGroup();
+    let markerGroup  = Leaflet.featureGroup();
     this.ubicationUser= e;
-    //let marker: any = leaflet.marker([e.latitude, e.longitude]).on('click', () => {
-      //alert('Marker clicked')
-     //})
-    //markerGroup.addLayer(marker);
-
-    this.comedores.forEach(c => {
-      let marker = leaflet.marker([c.latitude, c.longitude]).on('click', () => {
-        alert('Merendero1')
-      })
-      markerGroup.addLayer(marker);
-      this.map.addLayer(markerGroup);
-    })
+    this.addComedoresMarkers(this.comedores, markerGroup);
   })
+  }
+
+  locationComedor(nameComedor){
+    console.log(nameComedor);
+  }
+
+  addComedoresMarkers(data, elem){
+    let comedores = Object.keys(data);
+    comedores.forEach(c => {
+      let marker = Leaflet.marker([data[c].latitude, data[c].longitude])
+      .bindPopup(c)
+      .openPopup();
+      elem.addLayer(marker);
+      this.map.addLayer(elem);
+    })
+  }
+
+  removeRoutingControl = function () {
+    if (this.routingControl != null) {
+        this.map.removeControl(this.routingControl);
+        this.routingControl = null;
+    }
+};
+  selectAll(select: Select){
+    console.log(select)
+    let c = select._value;
+    if(this.routingControl === null){
+      this.routingControl = L.Routing.control({
+        waypoints: [
+          Leaflet.latLng(this.ubicationUser.latitude, this.ubicationUser.longitude),
+          Leaflet.latLng(this.comedores[c].latitude,this.comedores[c].longitude)
+        ],
+        routeWhileDragging: true
+      }).addTo(this.map);
+    }else{
+      this.map.removeControl(this.routingControl);
+      this.routingControl = L.Routing.control({
+        waypoints: [
+          Leaflet.latLng(this.ubicationUser.latitude, this.ubicationUser.longitude),
+          Leaflet.latLng(this.comedores[c].latitude,this.comedores[c].longitude)
+        ],
+        routeWhileDragging: true
+      }).addTo(this.map);
+    }
+    this.map.setView([this.comedores[c].latitude, this.comedores[c].longitude], 17)
+    Leaflet.marker([this.comedores[c].latitude,this.comedores[c].longitude])
+    .addTo(this.map)
+    .bindPopup(c)
+    .openPopup();
   }
 
   addMarker(){
     //let alert = this.alrtCtrl.create()
+    let radius = this.ubicationUser.accuracy;
     console.log('ubication', this.ubicationUser)
-    let marker = leaflet.marker([this.ubicationUser.latitude, this.ubicationUser.longitude]).on('click', () => {
-      alert('Tu ubicación')
-    })
-    this.map.addLayer(marker);
+    
+    Leaflet.marker([this.ubicationUser.latitude, this.ubicationUser.longitude])
+    .addTo(this.map)
+    .bindPopup('Mi Ubicacion')
+    .openPopup();
+    
+    Leaflet.circle([this.ubicationUser.latitude, this.ubicationUser.longitude], radius)
+    .addTo(this.map);
+    //this.map.addLayer(marker);  
+
   }
+  
+  
 }
- 
+
