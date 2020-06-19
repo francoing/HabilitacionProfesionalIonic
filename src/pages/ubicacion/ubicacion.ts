@@ -17,13 +17,14 @@ export class UbicacionPage implements OnInit {
   map: any;
   ubicationUser:any=[];
   routingControl = null;
-  
+  //comedorSelected:boolean=false;
+  view:boolean=false;
   
   comedores:any = {
-    "comedor1": {latitude:-26.834722,longitude:-65.2527723},
-    "comedor2":  {latitude:-26.8340416,longitude:-65.2567466},
-    "comedor3":  {latitude:-26.8340317,longitude:-65.2585252}, 
-    "rodrigo": {latitude:-34.5674263,longitude:-58.4858402}, 
+    "Comedor Santa Rita - MENDOZA 1001": {latitude:-26.834722,longitude:-65.2527723},
+    "Comedor La Nueva Esperanza - Sala y Valdez 190":  {latitude:-26.8340416,longitude:-65.2567466},
+    "Merendero San Expedito - Chacabuco 1070":  {latitude:-26.8340317,longitude:-65.2585252}, 
+    
   }
   comedoresKey:any;
   constructor(public navCtrl: NavController, public alrtCtrl: AlertController) {
@@ -83,6 +84,7 @@ export class UbicacionPage implements OnInit {
         ],
         routeWhileDragging: true
       }).addTo(this.map);
+      //this.comedorSelected = true;
     }else{
       this.map.removeControl(this.routingControl);
       this.routingControl = L.Routing.control({
@@ -99,6 +101,13 @@ export class UbicacionPage implements OnInit {
     .bindPopup(c)
     .openPopup();
   }
+
+ // displayRoutes(){      - MOSTRAR RUTAS DINAMICAS - 
+ //   this.view = !this.view;
+ //   let element:any = document.getElementsByClassName('leaflet-routing-container')[0];    
+ //   (this.view) ? element.style.display = "block" : element.style.display = "none"
+ //   //console.log('elemt', element);
+  //}
 
   addMarker(){
     //let alert = this.alrtCtrl.create()
