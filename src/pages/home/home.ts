@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { LugarPage } from '../lugar/lugar';
 import { EncargadoPage } from '../encargado/encargado';
+import { DietasPage } from '../dietas/dietas';
+import { DiagnosticosPage } from '../diagnosticos/diagnosticos';
+
 
 @Component({
   selector: 'page-home',
@@ -45,6 +48,15 @@ export class HomePage {
   mostrar_modalEncargados(){
     
     this.modalCtrl.create(EncargadoPage).present();
+  }
+  mostrar_modalDietas(){
+    
+    this.modalCtrl.create(DietasPage).present();
+
+  }
+  mostrar_modalDiagnosticos(){
+    
+    this.modalCtrl.create(DiagnosticosPage).present();
 
   }
 
