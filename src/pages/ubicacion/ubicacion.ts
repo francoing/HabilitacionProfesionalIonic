@@ -110,8 +110,8 @@ export class UbicacionPage implements OnInit {
     .bindPopup('Mi Ubicacion')
     .openPopup();
     
-    Leaflet.circle([this.ubicationUser.latitude, this.ubicationUser.longitude], radius)
-    .addTo(this.map);
+    // Leaflet.circle([this.ubicationUser.latitude, this.ubicationUser.longitude], radius)
+    // .addTo(this.map);
     //this.map.addLayer(marker);  
 
   }
