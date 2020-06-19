@@ -10,8 +10,12 @@ page-ubicacion {
     margin-left: 50px;
 }
 .leaflet-routing-container.leaflet-bar.leaflet-control{
-    
-    margin-top:15%;
+    display: none;
+    margin-top:13%;
     background: white;
 }
 
+.leaflet-routing-container.leaflet-bar.leaflet-routing-collapsible.leaflet-control{
+    width: 100%;
+    height: 50%;
+}
