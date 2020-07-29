@@ -26,6 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
 //almacenamiento
 import { IonicStorageModule } from '@ionic/storage';
 
+//Geolocation
+import { Geolocation } from '@ionic-native/geolocation';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 // Graficos
 // import { ChartsModule } from 'ng2-charts';
 import  {  ChartsModule  }  from  'ng2-charts-x' ;
@@ -86,6 +89,8 @@ import  {  ChartsModule  }  from  'ng2-charts-x' ;
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+    LaunchNavigator,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuarioProvider,
     DatosProvider
