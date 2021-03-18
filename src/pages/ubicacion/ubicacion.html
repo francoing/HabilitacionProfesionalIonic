@@ -24,7 +24,7 @@
 <ion-content>
   <ion-item class="RutaMerendero">
     <ion-label class="etiquetaRuta">Ruta a Merendero</ion-label>
-    <ion-select #myComedor value="brown" okText="Okay" cancelText="Dismiss" (ionChange)="rutaComedor(myComedor)">
+    <ion-select #myComedor value="brown" okText="Ok" cancelText="Cancelar" (ionChange)="rutaComedor(myComedor)">
       <ion-option *ngFor="let comedor of comedoresKey" value={{comedor}}>{{comedor}}</ion-option>
       </ion-select>
   </ion-item>
