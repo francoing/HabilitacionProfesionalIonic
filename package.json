@@ -28,7 +28,7 @@
     "@ionic-native/status-bar": "4.20.0",
     "@ionic/storage": "2.2.0",
     "@swimlane/ngx-charts": "^14.0.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-zoom": "^0.7.7",
     "cordova-android": "^8.1.0",
     "cordova-plugin-actionsheet": "^2.3.3",
