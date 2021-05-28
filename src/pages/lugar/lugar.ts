@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NiñosPage } from '../niños/niños';
 import { NinosPage } from '../ninos/ninos';
+import { LugarProvider } from '../../providers/lugar/lugar';
 
 
 
@@ -14,34 +15,42 @@ import { NinosPage } from '../ninos/ninos';
   templateUrl: 'lugar.html',
 })
 export class LugarPage {
-  myForm: FormGroup;
+
+  nombre:string="";
+  direccion:string="";
+  cantidad_ni:string="";
+  encargado_id:string="";
+  // myForm: FormGroup;
 
   lugar:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,private modalCtrl:ModalController) {
-    this.myForm = this.createMyForm();
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public formBuilder: FormBuilder,
+    private modalCtrl:ModalController,
+    private _lg:LugarProvider) {
+    // this.myForm = this.createMyForm();
+    this._lg.cargarEncargados();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LugarPage');
-  }
+  
   saveData(){
-    console.log(this.myForm.value);
+    // console.log(this.myForm.value);
   }
 
-  private createMyForm(){
-    return this.formBuilder.group({
-      nombre: ['', Validators.required],
-      direccion: ['', Validators.required],
-      cantidad_ni: ['', Validators.required],
-      encargado_id: ['', Validators.required],
-      // dateBirth: ['', Validators.required],
-      // passwordRetry: this.formBuilder.group({
-      //   password: ['', Validators.required],
-      //   passwordConfirmation: ['', Validators.required]º
-      // }),
-      // gender: ['', Validators.required],
-    });
-  }
+  // private createMyForm(){
+  //   return this.formBuilder.group({
+  //     nombre: ['', Validators.required],
+  //     direccion: ['', Validators.required],
+  //     cantidad_ni: ['', Validators.required],
+  //     encargado_id: ['', Validators.required],
+  //     // dateBirth: ['', Validators.required],
+  //     // passwordRetry: this.formBuilder.group({
+  //     //   password: ['', Validators.required],
+  //     //   passwordConfirmation: ['', Validators.required]
+  //     // }),
+  //     // gender: ['', Validators.required],
+  //   });
+  // }
 
   irAtras(){
     this.navCtrl.pop();
@@ -51,12 +60,18 @@ export class LugarPage {
     
     // this.modalCtrl.create(NinosPage,{lugar:lugar}).present();
     this.navCtrl.push(NinosPage,{
-      myForm:this.myForm.value.nombre    
+      // myForm:this.myForm.value.nombre    
       });
-      console.log(this.myForm.value.nombre);
+      // console.log(this.myForm.value.nombre);
       
-
   }
+
+  enviarData(){
+    this._lg.enviarData(this.nombre,this.direccion,this.cantidad_ni,this.encargado_id);
+    this.navCtrl.push(NinosPage);
+  }
+
+  
 
 
 }

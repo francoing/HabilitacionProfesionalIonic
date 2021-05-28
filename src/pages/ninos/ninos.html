@@ -53,10 +53,22 @@
             </ion-item>
 
 
+            <ion-item>
+                <ion-icon name="body" item-start></ion-icon>
+                <ion-label stacked>Sexo:</ion-label>
+                <!-- <ion-input formControlName="encargado" type="text" placeholder="Cantidad de Niños"></ion-input> -->
+                <ion-select name="sexo">
+                    <!-- <ion-option *ngFor="let item of _lg.encargados" value={{item.id}}>{{item.name}}</ion-option> -->
+                    <ion-option value="Masculino">Masculino</ion-option>
+                    <ion-option value="Femenino">Femenino</ion-option>
+
+                </ion-select>
+            </ion-item>
+
         </ion-list>
         <div class="row" text-center>
 
-            <button class="guardar" ion-button round block type="submit" [disabled]="!FormNinos.valid" (click)=" Evaluar()">Evaluar</button>
+            <button class="guardar" ion-button round block type="submit" (click)=" Evaluar()">Evaluar</button>
             <!-- <button class="guardar" ion-button round block type="submit" [disabled]="!FormNinos.valid">Finalizar</button> -->
 
 

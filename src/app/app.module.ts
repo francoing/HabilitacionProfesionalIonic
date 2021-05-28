@@ -29,6 +29,9 @@ import { IonicStorageModule } from '@ionic/storage';
 // Graficos
 // import { ChartsModule } from 'ng2-charts';
 import  {  ChartsModule  }  from  'ng2-charts-x' ;
+import { EncargadosProvider } from '../providers/encargados/encargados';
+import { LugarProvider } from '../providers/lugar/lugar';
+import { NinosProvider } from '../providers/ninos/ninos';
 
 
 
@@ -88,7 +91,10 @@ import  {  ChartsModule  }  from  'ng2-charts-x' ;
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuarioProvider,
-    DatosProvider
+    DatosProvider,
+    EncargadosProvider,
+    LugarProvider,
+    NinosProvider
   ]
 })
 export class AppModule {}

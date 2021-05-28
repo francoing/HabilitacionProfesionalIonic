@@ -41,7 +41,8 @@ export class NinosPage {
       peso: ['', Validators.required],
       talla: ['', Validators.required],
       edad: ['', Validators.required],
-      fechaNac: ['', Validators.required],				
+      fechaNac: ['', Validators.required],
+      sexo:['',Validators.required]				
     });
   }
 

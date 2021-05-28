@@ -21,33 +21,35 @@
 </ion-header>
 
 <ion-content padding>
-    <form [formGroup]="FormEncargado" (ngSubmit)="saveData()">
+    <ion-list class="list-form">
+
         <ion-list>
             <ion-item>
                 <ion-icon name="person" item-start></ion-icon>
                 <ion-label stacked>Nombre:</ion-label>
-                <ion-input formControlName="nombre" type="text" placeholder="Nombre"></ion-input>
+                <ion-input type="text" placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-icon name="home" item-start></ion-icon>
                 <ion-label stacked>Direccion:</ion-label>
-                <ion-input formControlName="direccion" type="text" placeholder="Direccion"></ion-input>
+                <ion-input [(ngModel)]="direccion" type="text" placeholder="Direccion"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-icon name="attach" item-start></ion-icon>
                 <ion-label stacked>Dni:</ion-label>
-                <ion-input formControlName="dni" type="number" placeholder="DNI"></ion-input>
+                <ion-input [(ngModel)]="dni" type="number" placeholder="DNI"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-icon name="call" item-start></ion-icon>
                 <ion-label stacked>Telefono:</ion-label>
-                <ion-input formControlName="telefono" type="number" placeholder="Telefono"></ion-input>
+                <ion-input [(ngModel)]="telefono" type="number" placeholder="Telefono"></ion-input>
             </ion-item>
 
         </ion-list>
         <div padding>
 
-            <button class="guardar" ion-button round block type="submit" [disabled]="!FormEncargado.valid">Guardar</button>
+            <button class="guardar" ion-button round block (click)="saveData()" tappable [disabled]="nombre.length < 5 || telefono.length <  5  ">Guardar</button>
         </div>
-    </form>
+
+    </ion-list>
 </ion-content>

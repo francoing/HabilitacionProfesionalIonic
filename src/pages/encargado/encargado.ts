@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 // formularios
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EncargadosProvider } from '../../providers/encargados/encargados';
 
 
 /**
@@ -19,25 +20,44 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EncargadoPage {
 
-  FormEncargado: FormGroup;
+  nombre:string="";
+  dni:string="";
+  direccion:string="";
+  telefono:string="";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder) {
-    this.FormEncargado = this.createFormEncargado();
+  // FormEncargado: FormGroup;
+
+  constructor(
+   public navCtrl: NavController,
+   public navParams: NavParams,
+   public formBuilder: FormBuilder,
+   private _en:EncargadosProvider) {
+    // this.FormEncargado = this.createFormEncargado();
   }
 
   saveData(){
-    console.log(this.FormEncargado.value);
+    console.log("Se envio a la base de datos:",
+    this.nombre,
+    this.direccion,
+    this.dni,
+    this.telefono,);
+    this._en.saveData(
+      this.nombre,
+      this.direccion,
+      this.dni,
+      this.telefono,
+      );
   }
 
-  private createFormEncargado(){
-    return this.formBuilder.group({
-      nombre: ['', Validators.required],
-      direccion: ['', Validators.required],
-      dni: ['', Validators.required],
-      telefono: ['', Validators.required],
+  // private createFormEncargado(){
+  //   return this.formBuilder.group({
+  //     nombre: ['', Validators.required],
+  //     direccion: ['', Validators.required],
+  //     dni: ['', Validators.required],
+  //     telefono: ['', Validators.required],
      
-    });
-  }
+  //   });
+  // }
   irAtras(){
     this.navCtrl.pop();
   }
