@@ -1,10 +1,10 @@
 page-dietas {
-    .card-background-page {
-        ion-card {
+    .content {
+        .button {
             position: relative;
             text-align: center;
         }
-        .card-title {
+        .button {
             position: absolute;
             top: 36%;
             font-size: 4.0em;
@@ -12,14 +12,14 @@ page-dietas {
             font-weight: bold;
             color: rgb(15, 15, 15);
         }
-        .card-subtitle {
+        .button {
             font-size: 1.0em;
             position: absolute;
             top: 52%;
             width: 100%;
             color: #0a0a0a;
         }
-        .imgColor {
+        .button {
             background-color: rgba(0, 0, 0, 0.4);
         }
     }
