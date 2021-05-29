@@ -1,28 +1,53 @@
 page-dietas {
-    .content {
-        .button {
-            position: relative;
-            text-align: center;
-        }
-        .button {
-            position: absolute;
-            top: 36%;
-            font-size: 4.0em;
-            width: 100%;
-            font-weight: bold;
-            color: rgb(15, 15, 15);
-        }
-        .button {
-            font-size: 1.0em;
-            position: absolute;
-            top: 52%;
-            width: 100%;
-            color: #0a0a0a;
-        }
-        .button {
-            background-color: rgba(0, 0, 0, 0.4);
-        }
+    /*Estilos Generales*/
+    .ion-header{
+        size: 100px;
     }
+
+.content {
+    background: linear-gradient(to bottom, #81ecec 20%, white 80%);
+    
+    
+}
+
+ h1 {
+    display: solid;
+    font-size: 25px;
+     margin-top: 0em;
+ }
+
+     font-family: 'Lora', serif;
+     text-shadow: darkmagenta 0.1em 0.1em 0.2em;
+ 
+.bonton-principal {
+    
+    background: linear-gradient(to bottom, #2f3534 50%, white 80%);
+    color: rgb(238, 238, 236);
+    //display: absolute;
+    font-size: 15px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    // width: 340px !important;
+    height: 100px !important;
+    width: 250px;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    
+    
+    
+    
+}
+
+
+/*Efectos, Hover*/
+
+.bonton-principal:hover {
+    box-shadow: 0px 0px 0px;
+    padding-top: 7px;
+    color: white;
+}
+
     .atras ion-icon{
     
         border-radius: 50px !important;
