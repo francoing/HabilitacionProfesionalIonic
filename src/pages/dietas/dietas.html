@@ -8,7 +8,7 @@
                     Atras
                 </button>
             </ion-buttons>
-        <ion-title><h2>Dietas y consejos</h2></ion-title>
+        <ion-title><h1>Dietas y consejos</h1></ion-title>
         
         </ion-navbar>
        
@@ -18,22 +18,55 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content padding>
     
-    <button color="primary"><h1>Obesidad</h1>
+   <!-- <button class="bonton-principal"  ion-button block outline icon-start (click)="ion-card"><h1>Obesidad</h1>
         <img src="assets/imgs/comida.jpg" class="imgColor" />
+        
+        <ion-icon name="analytics" is-active="false"></ion-icon>
+
+        
+        
+        
+            
     </button>
 
-    <button color="primary"><h1>Desnutricíon</h1>
+    <button class="bonton-principal" ion-button block outline icon-start (click)="mostrar_modal()"><h1>Desnutricíon</h1>
         <img src="assets/imgs/comida2.jpg" class="imgColor" />
+        <ion-icon name='bicycle' is-active="false"></ion-icon>
+            
     </button>
 
-    <button color="primary"><h1>Consejo 1</h1>
+    <button class="bonton-principal" ion-button block outline icon-start (click)="mostrar_modal()"><h1>Consejo 1</h1>
         <img src="assets/imgs/comida3.jpg" class="imgColor" />
+        <ion-icon name='bulb' is-active="false"></ion-icon>
+            
     </button>
 
-    <button color="primary"><h1>Consejo 2</h1>
+    <button class="bonton-principal" ion-button block outline icon-start (click)="mostrar_modal()"><h1>Consejo 2</h1>
         <img src="assets/imgs/comida4.jpg" class="imgColor" />
+       <ion-icon name='bulb' is-active="false"></ion-icon>
+            
+    </button>-->
+
+    <button class="bonton-principal" ion-button block
+    (click)="ir_DescripcionObesidad()">
+        <h1>ir a Obesidad </h1>
+    </button>
+<br>
+    <button class="bonton-principal" ion-button block
+    (click)="ir_DescripcionDesnutricion()">
+        <h1>ir a Desnutricion </h1>
+    </button>
+<br>
+    <button class="bonton-principal" ion-button block
+    (click)="ir_DescripcionConsejoI()">
+        <h1> ir a Consejo I </h1>
+    </button>
+<br>
+    <button class="bonton-principal" ion-button block
+    (click)="ir_DescripcionConsejoII()">
+       <h1> ir a Consejo II </h1>
     </button>
     
  <!--   <ion-content class="card-background-page">

@@ -1,9 +1,17 @@
 /*Estilos Generales*/
+.toolbar-title-ios {
+    text-align: center;
+    font-size: 2.9rem;
+    font-weight: 600;
+    color: #000;
+    pointer-events: auto;
+}
 
 .content {
     background: linear-gradient(to bottom, #81ecec 20%, white 80%);
     
 }
+
 
 // h1 {
 //     display: solid;
@@ -25,11 +33,11 @@ h6 {
     color: rgb(145, 13, 13);
     // display: absolute;
     font-size: 20px;
-    // margin: 5px;
-    padding: 10px 0;
+    margin: 20px;
+    padding: 10px;
     text-align: center;
-    // width: 340px !important;
-    height: 115px !important;
+    width: 300px !important;
+    height: 120px !important;
     text-decoration: none;
     font-family: 'Lato', sans-serif;
 }
