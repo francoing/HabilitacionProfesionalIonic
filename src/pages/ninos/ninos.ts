@@ -29,8 +29,6 @@ export class NinosPage {
 
   saveData(){
     console.log(this.FormNinos.value);
-   
-    
   }
 
   private createFormNinos(){
@@ -54,13 +52,10 @@ export class NinosPage {
 
   Evaluar(){
     
-    // this.modalCtrl.create(NinosPage,{lugar:lugar}).present();
     this.navCtrl.push(ResultadosPage,{
       FormNinos:this.FormNinos.value    
       });
       console.log(this.FormNinos.value);
-      
-
   }
 
   Limpiar_form(){
