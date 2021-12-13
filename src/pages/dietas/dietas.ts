@@ -21,5 +21,8 @@ export class DietasPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DietasPage');
   }
+  irAtras(){
+    this.navCtrl.pop();
+  }
 
 }

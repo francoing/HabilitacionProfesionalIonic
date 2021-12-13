@@ -39,5 +39,7 @@ export class DiagnosticosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DiagnosticosPage');
   }
-
+  irAtras(){
+    this.navCtrl.pop();
+  }
 }

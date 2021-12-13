@@ -1,26 +1,44 @@
 page-dietas {
-    .card-background-page {
-        ion-card {
+    .content {
+        .button {
             position: relative;
             text-align: center;
         }
-        .card-title {
+        .button {
             position: absolute;
             top: 36%;
-            font-size: 2.0em;
+            font-size: 4.0em;
             width: 100%;
             font-weight: bold;
-            color: #0a0a0a;
+            color: rgb(15, 15, 15);
         }
-        .card-subtitle {
+        .button {
             font-size: 1.0em;
             position: absolute;
             top: 52%;
             width: 100%;
             color: #0a0a0a;
         }
-        .imgColor {
+        .button {
             background-color: rgba(0, 0, 0, 0.4);
         }
+    }
+    .atras ion-icon{
+    
+        border-radius: 50px !important;
+        width: 20px !important;
+        height: 30px !important;
+        background: var(--ion-color-tertiary) !important;
+        color: var(--ion-color-light) !important;
+        padding: 5px !important;
+        margin-left: 10px;
+        margin-right: 10px;
+        
+    }
+    .atras:hover {
+        box-shadow:0px 0px 0px;
+        padding-top:7px;
+        color:white;
+        background: rgb(202, 211, 204);
     }
 }
